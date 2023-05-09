@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Models\CodePromotion;
+use App\Models\Promotion;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,4 +64,9 @@ Route::put('/codepromotions/{id}', function ($id) {
     $codePromotion->save();
 
     return response('Code promotion updated successfully.');
+});
+
+Route::get('/promotions', function (Request $request) {
+    $promotions = Promotion::all();
+    return response($promotions);
 });
