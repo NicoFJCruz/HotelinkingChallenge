@@ -22,7 +22,7 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
                     <div className="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                         <CodePromotionsList
                             user={auth.user}
-                            className="max-w-xl"
+                            className="w-full"
                         />
                     </div>
 
