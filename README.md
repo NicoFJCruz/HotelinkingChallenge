@@ -6,7 +6,7 @@ marcará como canjeado.
 
 ### Preparar la apliación
 - Clona en tu dispositvo local [este repositorio](https://github.com/NicoFJCruz/HotelinkingChallenge.git).
-- Abre el proyecto en un editor de código y asegúrate de estar en la rama *main*.
+- Abre el proyecto en un editor de código y asegúrate de estar en la rama *master*.
 - Crea un archivo llamado *database.sqlite* en el directorio *database*.
 - Crea un archivo ```.env``` en el directorio raíz y copia el contenido de ```.env.example```.
 - En el archivo ```.env```, en la línea ```DB_DATABASE ``` pega el path del archivo *database.sqlite* creado.
