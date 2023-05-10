@@ -49,16 +49,16 @@ const Promotions = ({ auth }) => {
                                         >
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                strokeWidth="1.5"
-                                                className="w-7 h-7 stroke-red-500"
+                                                class="h-10 w-10"
+                                                viewBox="0 0 20 20"
+                                                fill="#6b7280"
                                             >
+                                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
                                                 <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
-                                                />
+                                                    fill-rule="evenodd"
+                                                    d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                                    clip-rule="evenodd"
+                                                ></path>
                                             </svg>
                                         </button>
                                     </div>
