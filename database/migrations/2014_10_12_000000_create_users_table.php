@@ -11,7 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
+
         Schema::create('users', function (Blueprint $table) {
+            DB::statement('PRAGMA foreign_keys = ON;');
+
             $table->id();
             $table->string('name');
             $table->string('email')->unique();

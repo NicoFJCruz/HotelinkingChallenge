@@ -12,6 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('code_promotions', function (Blueprint $table) {
+            DB::statement('PRAGMA foreign_keys = ON;');
+
             $table->id();
             $table->timestamps();
             $table->string("code")->unique();
