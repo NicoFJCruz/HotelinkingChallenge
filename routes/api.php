@@ -26,7 +26,7 @@ Route::post('/promotions/{id}', function (Request $request, $id) {
     $codePromotion = CodePromotion::where('user_id', $userId)->where('promotion_id', $id)->first();
 
     if ($codePromotion) {
-        return response('Code Promotion already generated.');
+        return response('Código promocional ya generado.');
     }
 
     $codePromotion = new CodePromotion;
@@ -40,7 +40,7 @@ Route::post('/promotions/{id}', function (Request $request, $id) {
     $codePromotion->active = false;
     $codePromotion->save();
 
-    return response('Code Promotion generated successfully.');
+    return response('Código promocional generado exitosamente.');
 });
 
 Route::get('/codepromotions/{id}', function (Request $request, $id) {
@@ -53,17 +53,17 @@ Route::put('/codepromotions/{id}', function ($id) {
     $codePromotion = CodePromotion::find($id);
 
     if (!$codePromotion) {
-        return response()->json(['error' => 'Code promotion not found.'], 404);
+        return response()->json(['error' => 'Código promocional no encontrado.'], 404);
     }
 
     if ($codePromotion->active) {
-        return response('Code Promotion is already active.');
+        return response('Este código promocional ya fue canjeado.');
     }
 
     $codePromotion->active = true;
     $codePromotion->save();
 
-    return response('Code promotion updated successfully.');
+    return response('Código promocional canjeado.');
 });
 
 Route::get('/promotions', function (Request $request) {
