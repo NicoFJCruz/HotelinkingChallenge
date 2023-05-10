@@ -5,6 +5,7 @@ import axios from "axios";
 
 const Promotions = ({ auth }) => {
     const { promotions } = usePage().props;
+    console.log("PROMO", promotions);
 
     const handleClick = (promotion) => {
         axios
