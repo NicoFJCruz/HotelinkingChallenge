@@ -1,10 +1,10 @@
-## Sobre Aplicación
+# Sobre Aplicación
 
 Una pequeña plataforma donde un usuario puede acceder, ve una lista de ofertas, y puede,
 generar un código único que se guardará en la base de datos y después puede revisar que códigos promocionales tiene en una su perfil. En el detalle, el usuario puede pulsar sobre un botón canjear código que
 marcará como canjeado.
 
-# Preparar la apliación
+### Preparar la apliación
      Crear un archivo llamado * database.sqlite * en el directorio * database *.
      Crear un archivo ``` .env ``` en el directorio raíz y copiar el contenido de ```.env.example ``` . php 
      En ``` DB_DATABASE ``` pegar el path del archivo * database.sqlite * creado.
@@ -12,15 +12,15 @@ marcará como canjeado.
      Ejecutar en la terminal ejecutar el comando ``` composer install ``` .
      Ejecutar en la terminal ejecutar el comando ``` npm install ``` .
 
-# Iniciar la apliación
+### Iniciar la apliación
      Ejecutar en una terminal ejecutar el comando ``` php artisan serve ``` .
      Ejecutar en otra terminal (sin detener al anterior) ejecutar el comando ``` npm run dev ``` .
      Cuando estén corriendo ambos servidores, ingresa al puerto que te indica *php artisan serve*.
 
-# Disfrutando la aplicación
+### Disfrutando la aplicación
     ** ¡Una vez hayas ingresado registra una cuenta y podrás disfrutar de la aplicación! **
 
-## A continuación la información oficial de Laravel
+# A continuación la información oficial de Laravel
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
