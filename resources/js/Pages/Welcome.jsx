@@ -39,7 +39,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                     <div className="flex items-center justify-center">
                         <a href="/promotions">
                             <img
-                                src="https://openailabsprodscus.blob.core.windows.net/private/user-tofWCcltc1lZSxREw4CwvrrA/generations/generation-4ms3PuyBTv1fuDKSE3nCsxuq/image.png?st=2023-05-10T13%3A40%3A39Z&se=2023-05-10T15%3A38%3A39Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=15f0b47b-a152-4599-9e98-9cb4a58269f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-05-10T12%3A34%3A38Z&ske=2023-05-17T12%3A34%3A38Z&sks=b&skv=2021-08-06&sig=bzR%2BHGkKNU9omLbH0cEHKNrA9YLCzGhrAumkCNsUfWs%3D"
+                                src="/images/imageWelcome.png"
                                 alt="Image description"
                                 className="w-[40rem] rounded"
                             />
