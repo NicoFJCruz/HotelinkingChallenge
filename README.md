@@ -18,7 +18,7 @@ marcará como canjeado.
 - Cuando estén corriendo ambos servidores, ingresa al puerto que te indica *php artisan serve*.
 
 ### Disfrutando la aplicación
-    **¡Una vez hayas ingresado registra una cuenta y podrás disfrutar de la aplicación!**
+**¡Una vez hayas ingresado registra una cuenta y podrás disfrutar de la aplicación!**
 
 # A continuación la información oficial de Laravel
 
