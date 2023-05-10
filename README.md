@@ -5,7 +5,7 @@ generar un código único que se guardará en la base de datos y después puede 
 marcará como canjeado.
 
 ### Preparar la apliación
-- Crear un archivo llamado * database.sqlite * en el directorio * database *.
+- Crear un archivo llamado *database.sqlite* en el directorio *database*.
 - Crear un archivo ``` .env ``` en el directorio raíz y copiar el contenido de ```.env.example ``` . php 
 - En ``` DB_DATABASE ``` pegar el path del archivo * database.sqlite * creado.
 - Ejecutar en la terminal ejecutar el comando ``` php artisan key:generate ```, luego ``` php artisan migrate ``` y por último ``` php artisan db:seed ```.
@@ -18,7 +18,7 @@ marcará como canjeado.
 - Cuando estén corriendo ambos servidores, ingresa al puerto que te indica *php artisan serve*.
 
 ### Disfrutando la aplicación
-    ** ¡Una vez hayas ingresado registra una cuenta y podrás disfrutar de la aplicación! **
+    **¡Una vez hayas ingresado registra una cuenta y podrás disfrutar de la aplicación!**
 
 # A continuación la información oficial de Laravel
 
