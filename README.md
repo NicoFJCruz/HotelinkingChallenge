@@ -5,17 +5,17 @@ generar un código único que se guardará en la base de datos y después puede 
 marcará como canjeado.
 
 ### Preparar la apliación
-     Crear un archivo llamado * database.sqlite * en el directorio * database *.
-     Crear un archivo ``` .env ``` en el directorio raíz y copiar el contenido de ```.env.example ``` . php 
-     En ``` DB_DATABASE ``` pegar el path del archivo * database.sqlite * creado.
-     Ejecutar en la terminal ejecutar el comando ``` php artisan key:generate ```, luego ``` php artisan migrate ``` y por último ``` php artisan db:seed ```.
-     Ejecutar en la terminal ejecutar el comando ``` composer install ``` .
-     Ejecutar en la terminal ejecutar el comando ``` npm install ``` .
+- Crear un archivo llamado * database.sqlite * en el directorio * database *.
+- Crear un archivo ``` .env ``` en el directorio raíz y copiar el contenido de ```.env.example ``` . php 
+- En ``` DB_DATABASE ``` pegar el path del archivo * database.sqlite * creado.
+- Ejecutar en la terminal ejecutar el comando ``` php artisan key:generate ```, luego ``` php artisan migrate ``` y por último ``` php artisan db:seed ```.
+- Ejecutar en la terminal ejecutar el comando ``` composer install ``` .
+- Ejecutar en la terminal ejecutar el comando ``` npm install ``` .
 
 ### Iniciar la apliación
-     Ejecutar en una terminal ejecutar el comando ``` php artisan serve ``` .
-     Ejecutar en otra terminal (sin detener al anterior) ejecutar el comando ``` npm run dev ``` .
-     Cuando estén corriendo ambos servidores, ingresa al puerto que te indica *php artisan serve*.
+- Ejecutar en una terminal ejecutar el comando ``` php artisan serve ``` .
+- Ejecutar en otra terminal (sin detener al anterior) ejecutar el comando ``` npm run dev ``` .
+- Cuando estén corriendo ambos servidores, ingresa al puerto que te indica *php artisan serve*.
 
 ### Disfrutando la aplicación
     ** ¡Una vez hayas ingresado registra una cuenta y podrás disfrutar de la aplicación! **
