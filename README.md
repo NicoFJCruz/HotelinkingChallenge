@@ -5,17 +5,19 @@ generar un código único que se guardará en la base de datos y después puede 
 marcará como canjeado.
 
 ### Preparar la apliación
-- Crear un archivo llamado *database.sqlite* en el directorio *database*.
-- Crear un archivo ``` .env ``` en el directorio raíz y copiar el contenido de ```.env.example ``` . php 
-- En ``` DB_DATABASE ``` pegar el path del archivo * database.sqlite * creado.
-- Ejecutar en la terminal ejecutar el comando ``` php artisan key:generate ```, luego ``` php artisan migrate ``` y por último ``` php artisan db:seed ```.
-- Ejecutar en la terminal ejecutar el comando ``` composer install ``` .
-- Ejecutar en la terminal ejecutar el comando ``` npm install ``` .
+- Clona en tu dispositvo local [este repositorio](https://github.com/NicoFJCruz/HotelinkingChallenge.git).
+- Abre el proyecto en un editor de código y asegúrate de estar en la rama *main*.
+- Crea un archivo llamado *database.sqlite* en el directorio *database*.
+- Crea un archivo ```.env``` en el directorio raíz y copia el contenido de ```.env.example```.
+- En el archivo ```.env```, en la línea ```DB_DATABASE ``` pega el path del archivo *database.sqlite* creado.
+- Ejecuta en la terminal el comando ```composer install``` .
+- Ejecuta en la terminal el comando ```npm install``` .
+- Ejecuta en la terminal el comando ```php artisan key:generate```, luego ```php artisan migrate``` y por último ```php artisan db:seed```.
 
 ### Iniciar la apliación
-- Ejecutar en una terminal ejecutar el comando ``` php artisan serve ``` .
-- Ejecutar en otra terminal (sin detener al anterior) ejecutar el comando ``` npm run dev ``` .
-- Cuando estén corriendo ambos servidores, ingresa al puerto que te indica *php artisan serve*.
+- Ejecuta en una terminal el comando ```php artisan serve```.
+- Ejecuta en otra terminal (sin detener al anterior) el comando ```npm run dev``` .
+- Cuando ambos estén en ejecución, ingresa al puerto que te indica *php artisan serve*.
 
 ### Disfrutando la aplicación
 **¡Una vez hayas ingresado registra una cuenta y podrás disfrutar de la aplicación!**
