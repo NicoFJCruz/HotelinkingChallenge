@@ -36,8 +36,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware('auth')->group(function () {
-    Route::get('/promotions', [PromotionController::class, 'index'])->middleware(['auth', 'verified'])->name('promotions.index');
-});
+Route::get('/promotions', [PromotionController::class, 'index'])->middleware(['auth', 'verified'])->name('promotions');
 
 require __DIR__.'/auth.php';

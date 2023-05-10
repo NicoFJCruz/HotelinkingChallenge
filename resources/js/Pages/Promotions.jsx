@@ -5,7 +5,6 @@ import axios from "axios";
 
 const Promotions = ({ auth }) => {
     const { promotions } = usePage().props;
-    console.log("PROMO", promotions);
 
     const handleClick = (promotion) => {
         axios
@@ -13,7 +12,7 @@ const Promotions = ({ auth }) => {
                 user_id: auth.user.id,
             })
             .then((response) => {
-                alert(response.data)
+                alert(response.data);
             })
             .catch((error) => {
                 console.log(error);
@@ -25,7 +24,7 @@ const Promotions = ({ auth }) => {
             user={auth.user}
             header={
                 <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                    Promotions
+                    Listado de promociones para generar códigos
                 </h2>
             }
         >
@@ -36,8 +35,10 @@ const Promotions = ({ auth }) => {
                             <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                                 <div className="p-6 text-gray-900 flex justify-between items-center">
                                     <div className="w-11/12 pr-4">
-                                        {promotion.title}:
-                                        {promotion.description}
+                                        <h1 className="text-xl">
+                                            <b>{promotion.title}: </b>
+                                        </h1>
+                                        <p>{promotion.description}</p>
                                     </div>
                                     <div className="w-1/12 ">
                                         <button
