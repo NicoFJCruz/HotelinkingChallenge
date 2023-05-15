@@ -1,15 +1,17 @@
 import React from "react";
 import { usePage } from "@inertiajs/react";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import axios from "axios";
 import useCreateCode from "@/Hooks/useCreateCode";
+import toast, { Toaster } from "react-hot-toast";
 
 const Promotions = ({ auth }) => {
     const { promotions } = usePage().props;
 
+    const notify = (info) => toast(info);
+
     const handleClick = async (promotion) => {
-       const response = await useCreateCode(promotion, auth)
-       alert(response);
+        const response = await useCreateCode(promotion, auth);
+        notify(response);
     };
 
     return (
@@ -61,6 +63,7 @@ const Promotions = ({ auth }) => {
                     </div>
                 ))}
             </div>
+            <Toaster />
         </AuthenticatedLayout>
     );
 };

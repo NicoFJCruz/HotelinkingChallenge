@@ -2,16 +2,18 @@ import React, { useEffect, useState } from "react";
 import useCodePromotions from "@/Hooks/useCodePromotions";
 import useCodeList from "@/Hooks/useCodeList";
 import usePromotions from "@/Hooks/usePromotions";
+import toast, { Toaster } from "react-hot-toast";
 
 const CodePromotionsList = ({ user, className = "" }) => {
     const [codePromotions, setCodePromotions] = useState([]);
     const [promotions, setPromotions] = useState([]);
     const [buttonTexts, setButtonTexts] = useState({});
+    const notify = (info) => toast(info);
 
     const handleClick = async (id) => {
         try {
             const response = await useCodePromotions(id);
-            alert(response);
+            notify(response);
             setButtonTexts({ ...buttonTexts, [id]: "Código utilizado" });
         } catch (error) {
             console.log(error);
@@ -22,13 +24,12 @@ const CodePromotionsList = ({ user, className = "" }) => {
         const fetchData = async () => {
             const code = await useCodeList(user.id);
             setCodePromotions(code);
-            console.log(code);
-        
+
             const promo = await usePromotions();
             setPromotions(promo);
-          };
-        
-          fetchData();
+        };
+
+        fetchData();
     }, [user.id]);
 
     return (
@@ -85,6 +86,7 @@ const CodePromotionsList = ({ user, className = "" }) => {
                     })
                 )}
             </div>
+            <Toaster />
         </div>
     );
 };
