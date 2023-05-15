@@ -33,7 +33,7 @@ const CodePromotionsList = ({ user, className = "" }) => {
     }, [user.id]);
 
     return (
-        <div className={`w-full`}>
+        <div className={`w-full `}>
             <div>
                 <h2 className="text-lg font-medium text-gray-900">
                     Códigos Promocionales
@@ -43,7 +43,7 @@ const CodePromotionsList = ({ user, className = "" }) => {
                 </p>
             </div>
 
-            <div className="flex flex-wrap my-5 p-4 sm:p-8">
+            <div className="grid grid-cols-2 gap-5 my-5 p-4 sm:p-8">
                 {!codePromotions[0] ? (
                     <h1> No generaste códigos promocionales todavía. </h1>
                 ) : (
@@ -57,7 +57,7 @@ const CodePromotionsList = ({ user, className = "" }) => {
                         return (
                             <div
                                 key={i}
-                                className="p-4 border border-gray-200 bg-white shadow-sm my-5 rounded-lg "
+                                className="flex flex-col justify-between p-4 border border-gray-200 shadow-sm my-5 rounded-lg bg-[#a6acb4]"
                             >
                                 <div>
                                     <h2 className="text-lg font-medium text-gray-900">
@@ -71,16 +71,19 @@ const CodePromotionsList = ({ user, className = "" }) => {
                                 <div>
                                     Código: {code.code.slice(0, 10) + "..."}
                                 </div>
-                                <button
-                                    className={`bg-gray-800 hover:bg-gray-700 bg-gray-800 hover:bg-gray-700 inline-flex justify-center items-center text-white rounded-lg px-4 py-2 mt-3 font-semibold text-sm transition duration-500 ease-in-out transform hover:scale-105`}
-                                    onClick={() => handleClick(code.id)}
+                                <div className="flex justify-center mt-auto"
                                 >
-                                    {code.active
-                                        ? buttonTexts[code.id] ||
-                                          "Código utilizado"
-                                        : buttonTexts[code.id] ||
-                                          "Canjear código"}
-                                </button>
+                                    <button
+                                        className={`bg-gray-800 hover:bg-gray-700 bg-gray-800 hover:bg-gray-700 inline-flex justify-center items-center text-white rounded-lg px-4 py-2 mt-3 font-semibold text-sm transition duration-500 ease-in-out transform hover:scale-105`}
+                                        onClick={() => handleClick(code.id)}
+                                    >
+                                        {code.active
+                                            ? buttonTexts[code.id] ||
+                                              "Código utilizado"
+                                            : buttonTexts[code.id] ||
+                                              "Canjear código"}
+                                    </button>
+                                </div>
                             </div>
                         );
                     })
