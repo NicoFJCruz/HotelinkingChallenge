@@ -23,10 +23,6 @@ export default function Edit({ auth, mustVerifyEmail, status }) {
                             className="w-full"
                         />
                     </div>
-
-                    <div className="p-4 sm:p-8 bg-white shadow sm:rounded-lg bg-[#e9eaec]">
-                        <DeleteUserForm className="max-w-xl" />
-                    </div>
                 </div>
             </div>
         </AuthenticatedLayout>
