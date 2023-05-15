@@ -1,30 +1,34 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import useCodePromotions from "@/Hooks/useCodePromotions";
+import useCodeList from "@/Hooks/useCodeList";
+import usePromotions from "@/Hooks/usePromotions";
 
 const CodePromotionsList = ({ user, className = "" }) => {
     const [codePromotions, setCodePromotions] = useState([]);
     const [promotions, setPromotions] = useState([]);
     const [buttonTexts, setButtonTexts] = useState({});
 
-    const handleClick = (id) => {
-        axios
-            .put(`/api/codepromotions/${id}`)
-            .then((response) => {
-                alert(response.data);
-                setButtonTexts({ ...buttonTexts, [id]: "Código utilizado" });
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+    const handleClick = async (id) => {
+        try {
+            const response = await useCodePromotions(id);
+            alert(response);
+            setButtonTexts({ ...buttonTexts, [id]: "Código utilizado" });
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     useEffect(() => {
-        axios
-            .get(`/api/codepromotions/${user.id}`)
-            .then((res) => setCodePromotions(res.data))
-            .catch((error) => console.log(error));
-
-        axios.get("/api/promotions").then((res) => setPromotions(res.data));
+        const fetchData = async () => {
+            const code = await useCodeList(user.id);
+            setCodePromotions(code);
+            console.log(code);
+        
+            const promo = await usePromotions();
+            setPromotions(promo);
+          };
+        
+          fetchData();
     }, [user.id]);
 
     return (

@@ -2,21 +2,14 @@ import React from "react";
 import { usePage } from "@inertiajs/react";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import axios from "axios";
+import useCreateCode from "@/Hooks/useCreateCode";
 
 const Promotions = ({ auth }) => {
     const { promotions } = usePage().props;
 
-    const handleClick = (promotion) => {
-        axios
-            .post("/api/promotions/" + promotion, {
-                user_id: auth.user.id,
-            })
-            .then((response) => {
-                alert(response.data);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+    const handleClick = async (promotion) => {
+       const response = await useCreateCode(promotion, auth)
+       alert(response);
     };
 
     return (
@@ -31,9 +24,9 @@ const Promotions = ({ auth }) => {
             <div>
                 {promotions.map((promotion) => (
                     <div key={promotion.id} className="py-4">
-                        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 ">
                             <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                                <div className="p-6 text-gray-900 flex justify-between items-center">
+                                <div className="p-6 text-gray-900 flex justify-between items-center bg-[#e9eaec]">
                                     <div className="w-11/12 pr-4">
                                         <h1 className="text-xl">
                                             <b>{promotion.title}: </b>
