@@ -1,5 +1,4 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
-import DeleteUserForm from "./Partials/DeleteUserForm";
 import { Head } from "@inertiajs/react";
 import CodePromotionsList from "./Partials/CodePromotionsList";
 

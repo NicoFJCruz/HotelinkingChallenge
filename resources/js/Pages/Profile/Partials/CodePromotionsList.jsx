@@ -7,14 +7,14 @@ import toast, { Toaster } from "react-hot-toast";
 const CodePromotionsList = ({ user, className = "" }) => {
     const [codePromotions, setCodePromotions] = useState([]);
     const [promotions, setPromotions] = useState([]);
-    const [buttonTexts, setButtonTexts] = useState({});
+    const [refresh, setRefresh] = useState("");
     const notify = (info) => toast(info);
 
     const handleClick = async (id) => {
         try {
             const response = await useCodePromotions(id);
+            setRefresh(Math.random());
             notify(response);
-            setButtonTexts({ ...buttonTexts, [id]: "Código utilizado" });
         } catch (error) {
             console.log(error);
         }
@@ -30,12 +30,12 @@ const CodePromotionsList = ({ user, className = "" }) => {
         };
 
         fetchData();
-    }, [user.id]);
+    }, [user.id, refresh]);
 
     return (
         <div className={`w-full `}>
             <div>
-                <h2 className="text-lg font-medium text-gray-900">
+                <h2 className="text-xl font-medium text-gray-900">
                     Códigos Promocionales
                 </h2>
                 <p className="mt-1 text-sm text-gray-600">
@@ -54,34 +54,62 @@ const CodePromotionsList = ({ user, className = "" }) => {
                                       (p) => p.id === code.promotion_id
                                   )
                                 : null;
+
+                        const active = codePromotions.find(
+                            (e) => e.id === code.id
+                        );
+
                         return (
                             <div
                                 key={i}
-                                className="flex flex-col justify-between p-4 border border-gray-200 shadow-sm my-5 rounded-lg bg-[#a6acb4]"
+                                className="flex  flex-col justify-between p-4 border border-gray-200 shadow-sm my-5 rounded-lg bg-[#a6acb4]"
                             >
-                                <div>
-                                    <h2 className="text-lg font-medium text-gray-900">
-                                        Titulo: {promotion && promotion.title}
+                                <div className="flex flex-col items-center">
+                                    <img
+                                        src={promotion && promotion.image}
+                                        alt="Promotion image"
+                                        className="w-[15rem] rounded-[50%] m-6 "
+                                    />
+
+                                    <h2 className="text-xl font-medium text-gray-900 mb-4">
+                                        <b> Titulo: </b>{" "}
+                                        {promotion && promotion.title}
                                     </h2>
-                                    <p>
-                                        Descripción:{" "}
-                                        {promotion && promotion.description}
+
+                                    <p className="mb-4">
+                                        <b> Descripción: </b>
+                                        {promotion &&
+                                            promotion.description.slice(
+                                                0,
+                                                150
+                                            ) + "..."}
                                     </p>
                                 </div>
-                                <div>
-                                    Código: {code.code.slice(0, 10) + "..."}
+
+                                <div className="flex justify-center">
+                                    <p
+                                        className={`break-words max-w-[75%] text-xl ${
+                                            active.active
+                                                ? "text-[#646e7b]"
+                                                : ""
+                                        }`}
+                                    >
+                                        {code.code}
+                                    </p>
                                 </div>
-                                <div className="flex justify-center mt-auto"
-                                >
+
+                                <div className="flex justify-center mt-auto">
                                     <button
-                                        className={`bg-gray-800 hover:bg-gray-700 bg-gray-800 hover:bg-gray-700 inline-flex justify-center items-center text-white rounded-lg px-4 py-2 mt-3 font-semibold text-sm transition duration-500 ease-in-out transform hover:scale-105`}
+                                        className={`inline-flex justify-center items-center text-white rounded-lg px-4 py-2 mt-3 font-semibold text-sm transition duration-500 ease-in-out transform hover:scale-105 ${
+                                            active.active
+                                                ? "text-[#e9eaec] bg-[#4d5969] hover:bg-[#213043]"
+                                                : "bg-green-600 hover:bg-green-900"
+                                        }`}
                                         onClick={() => handleClick(code.id)}
                                     >
-                                        {code.active
-                                            ? buttonTexts[code.id] ||
-                                              "Código utilizado"
-                                            : buttonTexts[code.id] ||
-                                              "Canjear código"}
+                                        {active.active
+                                            ? "Código utilizado"
+                                            : "Canjear código"}
                                     </button>
                                 </div>
                             </div>
