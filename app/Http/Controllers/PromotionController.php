@@ -9,11 +9,6 @@ use Inertia\Response;
 
 class PromotionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Inertia\Response
-     */
     public function index(): Response
     {
         return Inertia::render('Promotions', [
