@@ -52,14 +52,14 @@ const Promotions = ({ auth }) => {
                                         className="w-[25rem] rounded-[50%] m-6"
                                     />
 
-                                    <h1 className="text-xl">
+                                    <h1 className="text-2xl mb-4">
                                         <b>{promotion.title}: </b>
                                     </h1>
-                                    <p>{promotion.description}</p>
+                                    <p className="text-lg">{promotion.description}</p>
                                 </div>
                                 <div className="w-full flex justify-evenly align-center items-center mt-6">
                                     <div>
-                                        <h2> {color ? "Código canjeado." : "Canjear Código:"} </h2>
+                                        <h2 className="text-xl font-bold"> {color ? "Código canjeado." : "Canjear Código:"} </h2>
                                     </div>
                                     <div>
                                         <button
